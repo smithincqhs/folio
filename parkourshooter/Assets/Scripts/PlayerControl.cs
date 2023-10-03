@@ -120,6 +120,8 @@ public class PlayerControl : MonoBehaviour
     public AudioClip[] stepSounds;
     public AudioClip[] jumpSounds;
     public AudioClip[] landSounds;
+    public AudioClip[] dashSounds;
+    public AudioClip[] hookshotSounds;
     public AudioClip normalMusic, deathMusic;
     public AudioSource musicSource;
     public AudioSource soundSource;
@@ -137,6 +139,7 @@ public class PlayerControl : MonoBehaviour
         musicSource.Play();
     }
 
+    bool currentGround, lastGround;
     private void Update() 
     {
         // input get in here so input is received regardless of framerate
@@ -154,13 +157,11 @@ public class PlayerControl : MonoBehaviour
     {
         RaycastHit groundCheck;
         isGrounded = Physics.SphereCast(player.transform.position, playerCollider.radius / 2, Vector3.down, out groundCheck, playerHeight / 2 + groundCheckTolerance, layerIdentGround);  // casts ray at player's feet of distance playerheight/2+tolerance to search for gameobject in layer "layerIdentGround"
-         
+        currentGround = isGrounded;
         Debug.DrawRay(player.transform.position, Vector3.down * (playerHeight / 2 + groundCheckTolerance), Color.white, 0.0f, false);
         if (isGrounded)
         {
             state = PlayerState.ground; // if player is grounded, set grounded state
-            soundSource.PlayOneShot(landSounds[Mathf.RoundToInt(Random.Range(0, landSounds.Length - 1))]); // play random land sound
-
         }
         else if (!isGrounded && state == PlayerState.ground)
         {
@@ -189,6 +190,11 @@ public class PlayerControl : MonoBehaviour
             Freeze();
         }
 
+        if (currentGround == true && lastGround == false)
+        {
+            soundSource.PlayOneShot(landSounds[Mathf.RoundToInt(Random.Range(0, landSounds.Length - 1))]); // play random land sound
+        }
+
         if (Input.GetKey(KeyCode.LeftControl) && dashReady == true && currentPower > 0) // change to current power > power to dash
         {
             Dash();
@@ -197,6 +203,7 @@ public class PlayerControl : MonoBehaviour
         {
             FireDispatcher();
         }
+        lastGround = currentGround;
     }
 
     public void DeathFunc() // if player dies
@@ -404,7 +411,8 @@ public class PlayerControl : MonoBehaviour
         playerRB.drag = 0;
         playerRB.velocity = new Vector3(playerRB.velocity.x, _t, playerRB.velocity.z); // set player fall speed to _t
         playerRB.AddForce(transform.forward * dashForce, ForceMode.Impulse); // apply dashforce to playerrb forwards
-        
+        soundSource.PlayOneShot(dashSounds[Mathf.RoundToInt(Random.Range(0, dashSounds.Length - 1))]); // play random dash sound
+
         dashReady = false; // disable immediate jumping on same frame
         InvokeRepeating(nameof(ResetDash), dashCooldown, 1); // after dashcooldown invoke repeating until reset dash is successful
         return;
@@ -451,6 +459,7 @@ public class PlayerControl : MonoBehaviour
             hook.spring = hookVarSpring; // how springy the rope is
             hook.damper = hookVarDamp; // how much movement dampening in springiness
             hook.massScale = hookVarMassScale; // some physics bs idk
+            soundSource.PlayOneShot(hookshotSounds[Mathf.RoundToInt(Random.Range(0, hookshotSounds.Length - 1))]); // play random hookshot sound
 
             hookRope.positionCount = 2; // two points in the line renderer for the rope
             currentHookPos = hookSpawnPoint.position; // set the hook position to the attach point
@@ -473,15 +482,16 @@ public class PlayerControl : MonoBehaviour
 
     private void FireDispatcher() // fire the gun
     {
+        soundSource.PlayOneShot(shootSounds[Mathf.RoundToInt(Random.Range(0, shootSounds.Length - 1))]); // play random dash sound
         RaycastHit gunHit;
         if(Physics.Raycast(mainCam.transform.position, cameraControl.cameraOrientation.forward, out gunHit, gunRange, layerIdentEnemy))
         {
             Debug.Log("hit!");
-            if(gunHit.transform.gameObject.transform.parent.gameObject.name == "Easy Roboid")
+            if(gunHit.transform.gameObject.CompareTag("Easy"))
             {
                 scoreCount.AddScore(easyPoints);
             } 
-            else if (gunHit.transform.gameObject.transform.parent.gameObject.name == "Mid Roboid")
+            else if (gunHit.transform.gameObject.CompareTag("Mid"))
             {
                 scoreCount.AddScore(midPoints);
             }
