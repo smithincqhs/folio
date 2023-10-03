@@ -76,3 +76,4 @@ crashlytics-build.properties
 /[Aa]ssets/TextMesh*
 /[Aa]ssets/ProBuilder*
 /[Aa]ssets/NavMeshStarter/*
+/[Aa]ssets/City*

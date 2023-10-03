@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneA : MonoBehaviour
 {
-    public string sceneIndex = "Level1";
-    public void LoadSceneAA()
+    public void LoadSceneAA(string sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
     }

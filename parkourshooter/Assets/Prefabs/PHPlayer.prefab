@@ -1,0 +1,222 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1622360897964791494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1622360897964791546}
+  - component: {fileID: 1622360897964791547}
+  - component: {fileID: 1622360897964791492}
+  - component: {fileID: 1622360897964791493}
+  - component: {fileID: 1622360897964791545}
+  - component: {fileID: 1622360897964791551}
+  - component: {fileID: 1622360897964791544}
+  m_Layer: 0
+  m_Name: PHPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1622360897964791546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622360897964791494}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 55.28, y: 0.87, z: -17.143}
+  m_LocalScale: {x: 0.75, y: 1, z: 0.75}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!33 &1622360897964791547
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622360897964791494}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1622360897964791492
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622360897964791494}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 63f937456ae7b334bacd83e32469514b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &1622360897964791493
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622360897964791494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1622360897964791545
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622360897964791494}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 1
+--- !u!114 &1622360897964791551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622360897964791494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff956bbeb0c3c044a34259b1ed14b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shrek1: {fileID: -5989773663970831794, guid: 0ec9f0c07b773224893645f61b514e92, type: 3}
+  shrek2: {fileID: -4178128378218805306, guid: 0ec9f0c07b773224893645f61b514e92, type: 3}
+  wallType:
+    serializedVersion: 2
+    m_Bits: 0
+  player: {fileID: 1622360897964791494}
+  state: 0
+  playerSpeed: 10
+  cameraControl: {fileID: 0}
+  mainCam: {fileID: 0}
+  musicSource: {fileID: 0}
+  normalClip: {fileID: 8300000, guid: 015180b7657b7e241b6134b72a9a60e2, type: 3}
+  playerHeight: 1.5
+  layerIdentGround:
+    serializedVersion: 2
+    m_Bits: 8
+  isGrounded: 1
+  groundCheckTolerance: 0.025
+  groundDrag: 5
+  flatV: {x: 0, y: 0, z: 0}
+  groundSpeed: 7
+  airNerf: 0.7
+  jumpReady: 1
+  jumpCooldown: 0.25
+  jumpForce: 5
+  jumpHoldFloat: 3
+  airDrag: 0
+  airSpeed: 10
+  wallrunMinV: 5
+  wallrunCheckRadius: 1
+  wallIsWhere: 0
+  wallrunForce: 9.8
+  layerIdentWall:
+    serializedVersion: 2
+    m_Bits: 64
+  wallrunDrag: 2.5
+  wallSpeed: 8
+  skidDrag: 3.5
+  layerIdentWallSkid:
+    serializedVersion: 2
+    m_Bits: 8
+  dashForce: 5
+  dashDrag: 4
+  dashReady: 1
+  dashCooldown: 0.5
+  maxPower: 50
+  currentPower: 0
+  powerToDash: 0
+  powerToJump: 0
+  powerToWallrun: 0
+  powerToShoot: 0
+  deathUI: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 193e894fdece51e47a3a4cde40c88619, type: 3}
+  hookRange: 25
+  layerIdentHookable:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  maxSwingDist: 0.8
+  minSwingDist: 0.25
+  hookVarSpring: 4.5
+  hookVarDamp: 7
+  hookVarMassScale: 4.5
+  swingKey: 324
+  hookRope: {fileID: 0}
+  hookSpawnPoint: {fileID: 0}
+  ropeSpeed: 8
+  swingSpeed: 10
+  swingDrag: 0.1
+  guIMeanDispatchImplement: {fileID: 0}
+  dispatcherSpawnPoint: {fileID: 0}
+--- !u!114 &1622360897964791544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622360897964791494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a65fd190d91b5bb4abe62768ea3603c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugEnabled: 0
+  player: {fileID: 1622360897964791494}
+  boxTopLeft: {fileID: 0}
+  boxBottomLeft: {fileID: 0}
+  boxTopRight: {fileID: 0}
+  boxBottomRight: {fileID: 0}
+  cameraControl: {fileID: 0}
+  mainCam: {fileID: 0}
+  scoreKeeper: {fileID: 0}
