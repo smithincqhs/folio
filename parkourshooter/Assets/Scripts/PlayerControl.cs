@@ -114,6 +114,7 @@ public class PlayerControl : MonoBehaviour
     public SpawnHandler spawnHandle;
     public ScoreCounter scoreCount;
     public int easyPoints = 15, midPoints = 30;
+    public ParticleSystem muzzleFlash;
 
     [Header("Sounds")]
     public AudioClip[] shootSounds;
@@ -483,6 +484,7 @@ public class PlayerControl : MonoBehaviour
     private void FireDispatcher() // fire the gun
     {
         soundSource.PlayOneShot(shootSounds[Mathf.RoundToInt(Random.Range(0, shootSounds.Length - 1))]); // play random dash sound
+        muzzleFlash.Play();
         RaycastHit gunHit;
         if(Physics.Raycast(mainCam.transform.position, cameraControl.cameraOrientation.forward, out gunHit, gunRange, layerIdentEnemy))
         {
